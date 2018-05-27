@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-  /* TODO:style中通过alias引入文件时需要加~ */
+  // TODO:style中通过alias引入文件时需要加~
   @import '~@/assets/styles/variables.styl'
   .header
     display: flex
@@ -46,7 +46,7 @@ export default {
       width: 1.24rem
       float: right
       text-align: center
-      /* 处理两个内联元素之间的空格问题*/
+      // 处理两个内联元素之间的空格问题
       font-size: 0px
       span
         font-size: .28rem
