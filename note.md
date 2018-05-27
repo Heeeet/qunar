@@ -9,3 +9,7 @@ cnpm install stylus-loader --save
 # vue-awesome-swiper
 cnpm install vue-awesome-swiper@2.6.7 --save
 ```
+```bash
+# 把线上的index-swiper分支合并到本地的master分支
+git merge origin/index-swiper
+```
