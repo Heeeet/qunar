@@ -1,12 +1,12 @@
 <template>
   <div class="wrapper">
     <swiper :options="swiperOption">
-        <swiper-slide v-for="item of imgList" :key="item.id">
-          <img :src="item.img" alt="去哪儿门票" class="swiper-img">
-        </swiper-slide>
-        <div class="swiper-pagination"  slot="pagination"></div>
-      </swiper>
-    </div>
+      <swiper-slide v-for="item of imgList" :key="item.id">
+        <img :src="item.img" alt="去哪儿门票" class="swiper-img">
+      </swiper-slide>
+      <div class="swiper-pagination"  slot="pagination"></div>
+    </swiper>
+  </div>
 </template>
 
 <script>
@@ -43,15 +43,15 @@ export default {
   .wrapper
     // 图片高宽比为26.67
     // 需要设置为轮播图容器的高度,防止页面加载时出现抖动
-    width: 100%
-    // 这里不能直接设置为 height: 26.67%, 因为height的百分比是相对与父容器的
-    height: 0
-    overflow: hidden
-    // padding 的百分比是相对元素的width
-    padding-bottom: 26.67%
-    // TODO: 以上三行可以改为(高度为视口的26.67)
-    // height: 26.67vw
+    width 100%
+    // 这里不能直接设置为 height 26.67%, 因为height的百分比是相对与父容器的
+    height 0
+    overflow hidden
+    // TODO  padding 的百分比是相对父元素的width
+    padding-bottom 26.67%
+    // TODO 以上三行可以改为(高度为视口的26.67)
+    // height 26.67vw
     .swiper-img
       // 图片宽度的百分比是相对于父元素的width
-      width: 100%
+      width 100%
 </style>

@@ -23,34 +23,34 @@ export default {
   // TODO:style中通过alias引入文件时需要加~
   @import '~@/assets/styles/variables.styl'
   .header
-    display: flex
-    line-height: .86rem
-    background: $bgColor
-    color: #fff
+    display flex
+    line-height .86rem
+    background $bgColor
+    color #fff
     .header-left
-      width: .64rem
-      float: left
-      text-align: center
-      font-size: .4rem
+      width .64rem
+      float left
+      text-align center
+      font-size .4rem
     .header-input
-      flex: 1
-      color: #ccc
-      height: .64rem
-      line-height: .64rem
-      margin-top: .12rem
-      margin-left: .2rem
-      padding-left: .2rem
-      background: #fff
-      border-radius: .1rem
+      flex 1
+      color #ccc
+      height .64rem
+      line-height .64rem
+      margin-top .12rem
+      margin-left .2rem
+      padding-left .2rem
+      background #fff
+      border-radius .1rem
     .header-right
-      width: 1.24rem
-      float: right
-      text-align: center
+      width 1.24rem
+      float right
+      text-align center
       // 处理两个内联元素之间的空格问题
-      font-size: 0px
+      font-size 0px
       span
-        font-size: .28rem
+        font-size .28rem
       .arrow-icon
-        font-size: .24rem
-        margin-left: .04rem
+        font-size .24rem
+        margin-left .04rem
 </style>
