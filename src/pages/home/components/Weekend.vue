@@ -20,15 +20,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      weekendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-        title: '北京赏花好地方',
-        desc: '乱花渐欲迷人眼，京城赏花大搜索'
-      }]
-    }
+  props: {
+    weekendList: Array
   }
 }
 </script>
@@ -37,14 +30,13 @@ export default {
   @import '~@/assets/styles/mixins.styl'
   .title
     background #eee
-    margin-top .1rem
     line-height .8rem
     /* 换一种方式*/
     padding-left .2rem
   .item-img-wrapper
     overflow hidden
     height 0
-    padding-bottom 33.4%
+    padding-bottom 37.09%
     img
       width 100%
   .item-info

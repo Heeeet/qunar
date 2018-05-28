@@ -21,15 +21,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/a5/4003f9dd7bebf61eccbf64046e26d487.water.jpg_200x200_7690e4cd.jpg',
-        title: '深圳欢乐谷',
-        desc: '广东最好玩的景点'
-      }]
-    }
+  props: {
+    recommendList: Array
   }
 }
 </script>

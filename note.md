@@ -8,8 +8,11 @@ cnpm install stylus --save
 cnpm install stylus-loader --save
 # vue-awesome-swiper
 cnpm install vue-awesome-swiper@2.6.7 --save
+# axios
+cnpm install axios --save
 ```
 ```bash
 # 把线上的index-swiper分支合并到本地的master分支
 git merge origin/index-swiper
 ```
+> static目录下的文件可以直接访问, 如 http://localhost:8080/static/mock/index.json

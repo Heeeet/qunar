@@ -10,7 +10,17 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    // TODO: 将对 /api 的请求转发到 /static/mock下, 这个过程由webpack完成
+    // 这样的好处是: 保持访问本地接口模拟数据和访问线上接口一致, 这样上线的时候就可以不用改接口了
+    proxyTable: {
+      '/api': {
+        // 目标主机
+        target: 'http://localhost:8080',
+        pathRewrite: {
+          '^/api': '/static/mock'
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
