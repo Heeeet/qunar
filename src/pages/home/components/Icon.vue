@@ -120,6 +120,7 @@ export default {
       box-sizing border-box
       padding .1rem
       .img-container
+        display inline-block
         position absolute
         top 0
         left 0
