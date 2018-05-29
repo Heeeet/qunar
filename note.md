@@ -21,4 +21,6 @@ git merge origin/index-swiper
 ```bash
 # 查看全局安装了哪些模块
 npm list --depth 0 -g
+# 创建一个基于webpack模版的项目
+vue init webpack my-project
 ```
