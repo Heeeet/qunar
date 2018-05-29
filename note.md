@@ -16,3 +16,9 @@ cnpm install axios --save
 git merge origin/index-swiper
 ```
 > static目录下的文件可以直接访问, 如 http://localhost:8080/static/mock/index.json
+
+#### npm命令
+```bash
+# 查看全局安装了哪些模块
+npm list --depth 0 -g
+```
