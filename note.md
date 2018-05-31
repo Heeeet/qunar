@@ -10,6 +10,8 @@ cnpm install stylus-loader --save
 cnpm install vue-awesome-swiper@2.6.7 --save
 # axios
 cnpm install axios --save
+# better-scroll
+cnpm install better-scroll --save
 ```
 ```bash
 # 把线上的index-swiper分支合并到本地的master分支
