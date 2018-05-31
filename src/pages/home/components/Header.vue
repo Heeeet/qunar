@@ -5,11 +5,14 @@
     </div>
     <div class="header-input">
       <span class="iconfont">&#xe632;</span>
-      输入城市/景点/游玩主题</div>
-    <div class="header-right">
-      <span>{{city}}</span>
-      <span class="iconfont arrow-icon">&#xe64a;</span>
+      输入城市/景点/游玩主题
     </div>
+    <router-link to="/city">
+      <div class="header-right">
+        <span>{{city}}</span>
+        <span class="iconfont arrow-icon">&#xe64a;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -27,7 +30,8 @@ export default {
   @import '~@/assets/styles/variables.styl'
   .header
     display flex
-    line-height .86rem
+    height $headerHeight
+    line-height $headerHeight
     background $bgColor
     color #fff
     .header-left
@@ -51,6 +55,7 @@ export default {
       text-align center
       // 处理两个内联元素之间的空格问题
       font-size 0px
+      color #fff
       span
         font-size .28rem
       .arrow-icon
