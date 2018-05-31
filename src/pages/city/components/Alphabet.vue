@@ -51,6 +51,7 @@ export default {
           clearTimeout(this.timer)
         }
         // ?函数节流,提高性能
+        // 两次滑动之间小于16ms的话就不执行下面代码
         this.timer = setTimeout(() => {
           // 79为city-list距离浏览器顶部的高度
           const scrollY = e.touches[0].clientY - 79
