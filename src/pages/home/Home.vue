@@ -21,10 +21,16 @@ export default {
   data () {
     return {
       // city: '',
+      lastCity: '',
       swiperList: [],
       iconList: [],
       recommendList: [],
       weekendList: []
+    }
+  },
+  computed: {
+    city () {
+      return this.$store.state.city
     }
   },
   components: {
@@ -36,7 +42,7 @@ export default {
   },
   methods: {
     getHomeInfo () {
-      axios.get('/api/index.json')
+      axios.get('/api/index.json?city=' + this.city)
         .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
@@ -54,8 +60,20 @@ export default {
     }
   },
   mounted () {
+    this.lastCity = this.city
     this.getHomeInfo()
+  },
+  // 当Home.vue被使用的时候,调用activated这个生命周期钩子
+  activated () {
+    if (this.lastCity !== this.city) {
+      this.getHomeInfo()
+      this.lastCity = this.city
+    }
   }
+  // 当Home.vue停用的时候,调用deactivated这个生命周期钩子
+  // deactivated () {
+  //   console.log('deactivated')
+  // }
 }
 </script>
 
