@@ -71,7 +71,7 @@ export default {
     .title
       width 100%
       height .54rem
-      line-height .44rem
+      line-height .54rem
       padding-left .2rem
       background #eee
       color #666
