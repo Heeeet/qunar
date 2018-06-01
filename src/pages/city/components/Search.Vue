@@ -7,10 +7,14 @@
              v-model="keyword"
       >
     </div>
-    <div class="search-content" ref="search" v-show="keyword">
+    <div class="search-content" ref="search" v-show="showSearchContent">
       <ul>
-        <li v-for="item of list" :key="item.id" class="search-item border-bottom">{{item.name}}</li>
-        <li v-if="show" class="search-item border-bottom">没有找到匹配数据</li>
+        <li v-for="item of list"
+            :key="item.id"
+            class="search-item border-bottom"
+            @click="changeCity(item.name)"
+        >{{item.name}}</li>
+        <li v-if="showSearchList" class="search-item border-bottom">没有找到匹配数据</li>
       </ul>
     </div>
   </div>
@@ -27,16 +31,22 @@ export default {
     return {
       keyword: '',
       list: [],
-      timer: null
+      timer: null,
+      isClick: false
+      // showSearchContent: false
     }
   },
   computed: {
-    show () {
+    showSearchList () {
       return !this.list.length
+    },
+    showSearchContent () {
+      return !!this.keyword.length && (!this.isClick)
     }
   },
   watch: {
     keyword () {
+      this.isClick = false
       // 函数节流
       if (this.timer) {
         clearTimeout(this.timer)
@@ -57,6 +67,15 @@ export default {
         }
         this.list = result
       }, 100)
+    }
+  },
+  methods: {
+    changeCity (city) {
+      this.isClick = true
+      this.keyword = ''
+      this.$store.commit('changeCity', city)
+      // 详见vue-router文档: 编程式导航
+      this.$router.push('/')
     }
   },
   mounted () {
@@ -87,7 +106,7 @@ export default {
     top 1.58rem
     left 0
     right 0
-    // bottom 0
+    bottom 0
     z-index 1
     background #eee
     .search-item

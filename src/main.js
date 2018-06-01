@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import fastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+// 会自动找到store目录下的index.js
+import store from './store'
 // TODO:可以在 webpack.base.conf.js 文件中的 resolve 属性中定义路径别名
 import '@/assets/styles/reset.css'
 // 解决移动端1px问题
@@ -22,6 +24,7 @@ Vue.use(VueAwesomeSwiper)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
