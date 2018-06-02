@@ -38,6 +38,8 @@ module.exports = {
       '@': resolve('src'),
       // FIXME: 定义别名 style$ 后引用失败(原因未知)
       // 'styles$': resolve('src/assets/styles')
+      // 修改配置文件后要重启webpack-sever
+      'common': resolve('src/common')
     }
   },
   module: {

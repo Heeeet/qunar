@@ -3,17 +3,24 @@
     <div class="title">热销推荐</div>
     <ul>
       <!-- border-bottom: 引入一像素边框(border.css)-->
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <!-- router-link默认渲染成a标签-->
+      <!-- <router-link to="/details"></router-link> -->
+      <!-- 可以指定将router-link渲染成li标签-->
+      <router-link tag="li"
+                   class="item border-bottom"
+                   v-for="item of recommendList"
+                   :key="item.id"
+                   :to="'/details/' + item.id">
         <div class="item-img-wrapper">
           <img :src="item.imgUrl"
-               :alt="item.title">
+              :alt="item.title">
         </div>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>
           <button class="item-button">查看详情</button>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
