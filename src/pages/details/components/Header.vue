@@ -9,7 +9,7 @@
     <div class="header-fixed"
          v-show="!showAbs"
          :style="opacityStyle">
-      景点详情
+      <h1 class="header-desc">{{headerDesc}}</h1>
       <router-link tag="span" to="/" class="iconfont header-fixed-back">&#xe624;</router-link>
     </div>
   </div>
@@ -18,12 +18,20 @@
 <script>
 export default {
   name: 'DetailsHeader',
+  props: {
+    sightName: String
+  },
   data () {
     return {
       showAbs: true,
       opacityStyle: {
         opacity: 0
       }
+    }
+  },
+  computed: {
+    headerDesc () {
+      return this.sightName.slice(0, this.sightName.indexOf('('))
     }
   },
   methods: {
@@ -48,12 +56,20 @@ export default {
       }
     }
   },
-  activated () {
-    // 将事件绑定在全局对象上会影响到其他组件(这里应该很好理解)
+  // 当使用<keep-alive exclude="Details"></keep-alive> 时, activated和deactivated会失效
+  // activated () {
+  //   // 将事件绑定在全局对象上会影响到其他组件(这里应该很好理解)
+  //   console.log('act')
+  //   window.addEventListener('scroll', this.handleScroll)
+  // },
+  // // 当当前组件被停止时,解绑全局对象上的scroll事件,这样就不会污染到其他组件了
+  // deactivated () {
+  //   window.removeEventListener('scroll', this.handleScroll)
+  // }
+  mounted () {
     window.addEventListener('scroll', this.handleScroll)
   },
-  // 当当前组件被停止时,解绑全局对象上的scroll事件,这样就不会污染到其他组件了
-  deactivated () {
+  destroyed () {
     window.removeEventListener('scroll', this.handleScroll)
   }
 }
@@ -61,6 +77,7 @@ export default {
 
 <style lang="stylus" scoped>
   @import '~@/assets/styles/variables.styl'
+  @import '~@/assets/styles/mixins.styl'
   .header-abs
     position absolute
     left .2rem
@@ -86,6 +103,9 @@ export default {
     color #fff
     font-size .32rem
     background $bgColor
+    .header-desc
+      margin 0 1rem
+      ellipsis()
     .header-fixed-back
       position absolute
       top 0

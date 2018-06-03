@@ -19,5 +19,9 @@ export default new Router({
     path: '/details/:id', // 动态路由
     name: 'Details',
     component: Details
-  }]
+  }],
+  // 当页面切换时,始终回到页面的顶部
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
