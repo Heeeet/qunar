@@ -14,6 +14,8 @@ cnpm install axios --save
 cnpm install better-scroll --save
 # vuex
 cnpm install vuex --save
+# babel-polyfill
+cnpm install babel-polyfill --save
 ```
 ```bash
 # 把线上的index-swiper分支合并到本地的master分支
@@ -27,4 +29,9 @@ git merge origin/index-swiper
 npm list --depth 0 -g
 # 创建一个基于webpack模版的项目
 vue init webpack my-project
+```
+```bash
+# package.json
+# 加上 --host 0.0.0.0 后就可以使用ip地址访问
+webpack-dev-server --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js
 ```

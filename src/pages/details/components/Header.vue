@@ -67,7 +67,7 @@ export default {
   //   window.removeEventListener('scroll', this.handleScroll)
   // }
   mounted () {
-    window.addEventListener('scroll', this.handleScroll)
+    document.addEventListener('scroll', this.handleScroll)
   },
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll)
@@ -95,7 +95,7 @@ export default {
     position fixed
     top 0
     left 0
-    right  0
+    right 0
     z-index 2
     height $headerHeight
     line-height $headerHeight
