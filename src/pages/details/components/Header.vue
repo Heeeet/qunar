@@ -36,8 +36,9 @@ export default {
   },
   methods: {
     handleScroll () {
-      // console.log('scroll')
-      const top = document.documentElement.scrollTop
+      // 各浏览器获取scrollTop的方法不一致, 具体百度
+      const top = document.documentElement.scrollTop || document.body.scrollTop
+      // alert(top)
       // if (top < 60) {
       //   this.showAbs = true
       // } else if (top >= 60 && top < 140) {
@@ -67,7 +68,7 @@ export default {
   //   window.removeEventListener('scroll', this.handleScroll)
   // }
   mounted () {
-    document.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll', this.handleScroll)
   },
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll)

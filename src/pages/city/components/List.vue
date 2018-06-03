@@ -63,7 +63,10 @@ export default {
   },
   mounted () {
     // console.log(this.$refs.wrapper)
-    this.scroll = new BScroll(this.$refs.wrapper)
+    this.scroll = new BScroll(this.$refs.wrapper, {
+      // 为了让子元素能被点击, 需要使用click: true
+      click: true
+    })
   }
 }
 </script>
